@@ -1,0 +1,23 @@
+# Installed packages and build output (recreated by npm install / pip install / npm run build)
+node_modules/
+dist/
+.venv/
+venv/
+__pycache__/
+*.pyc
+
+# Secrets stay on your computer: copy each .env.example to .env and fill in your own values
+.env
+.env.local
+.shared-media-secret
+
+# System and log files
+.DS_Store
+*.log
+
+# Research raw material: Netflix's own page captures (not ours to publish), raw downloads and big demo files
+research/netflix_dom.html
+research/netflix_rea_screenshot.png
+research/downloads/
+research/app-screens/*
+!research/app-screens/v2/

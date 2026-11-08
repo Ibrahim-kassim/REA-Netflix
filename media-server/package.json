@@ -1,0 +1,20 @@
+{
+  "name": "reaflix-media-server",
+  "version": "1.0.0",
+  "private": true,
+  "description": "REAflix media server: streams videos (HTTP Range) and serves images with long-lived caching.",
+  "type": "module",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "dev": "node --watch --env-file=.env src/server.js",
+    "start": "node --env-file=.env src/server.js"
+  },
+  "dependencies": {
+    "cors": "^2.8.6",
+    "express": "^5.3.0",
+    "express-rate-limit": "^8.7.3",
+    "helmet": "^8.3.0"
+  }
+}

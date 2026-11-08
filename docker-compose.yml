@@ -1,0 +1,19 @@
+# Local MongoDB for REAflix only (port 27018, so it never touches other projects on 27017).
+services:
+  mongo:
+    image: mongo:8.0
+    container_name: reaflix-mongo
+    env_file: database/.env
+    ports:
+      - "127.0.0.1:27018:27017"
+    volumes:
+      - reaflix-mongo-data:/data/db
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "mongosh", "--quiet", "--eval", "db.adminCommand('ping').ok"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+volumes:
+  reaflix-mongo-data:
